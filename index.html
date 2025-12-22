@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Brownie Tudibom</title>
+    <style>
+        :root {
+            --marrom-escuro: #3d2314;
+            --marrom-claro: #8d5524;
+            --dourado: #c6a664;
+            --creme: #fdf5e6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--creme);
+            color: var(--marrom-escuro);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--marrom-escuro);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 5px solid var(--dourado);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .categoria {
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--marrom-claro);
+            padding-bottom: 10px;
+        }
+
+        .categoria h2 {
+            color: var(--marrom-claro);
+            text-transform: uppercase;
+            font-size: 1.2em;
+            text-align: center;
+            background: white;
+            display: block;
+            margin: 0 auto 20px;
+            padding: 5px 15px;
+            width: fit-content;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 15px;
+        }
+
+        .item-info {
+            flex: 1;
+        }
+
+        .item-nome {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .item-descricao {
+            font-size: 0.9em;
+            color: #666;
+            display: block;
+        }
+
+        .item-preco {
+            font-weight: bold;
+            color: var(--marrom-escuro);
+            margin-left: 15px;
+            white-space: nowrap;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #eee;
+            margin-top: 40px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+        }
+
+        .social-link {
+            display: block;
+            margin-top: 15px;
+            color: var(--marrom-claro);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>BROWNIE TUDIBOM</h1>
+        <p>O sabor que derrete na boca e aquece o coração em 2026.</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Brownies -->
+        <div class="categoria">
+            <h2>Brownies</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Nutella</span><span class="item-descricao">Inconfundível creme de avelã.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Leite Ninho</span><span class="item-descricao">Delicioso creme feito com o original leite ninho.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Oreo</span><span class="item-descricao">Sabor e crocância do nosso brownie de oreo.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Doce de Leite</span><span class="item-descricao">Doce feito do mais puro leite.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Brigadeiro</span><span class="item-descricao">Feito com puro chocolate belga amargo.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Nozes com Damasco</span><span class="item-descricao">Crocância com leve acidez.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Morango</span><span class="item-descricao">A clássica combinação com chocolate.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Maracujá</span><span class="item-descricao">Refrescância natural com chocolate.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Café</span><span class="item-descricao">Sabor puro e nobre de Café.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Amendoim</span><span class="item-descricao">Creme de amendoim torrado na fábrica.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Doce De Leite com Ameixa</span><span class="item-descricao">Doce de leite com ameixa triturada.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Coco</span><span class="item-descricao">Com lascas de coco real.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Limão Siciliano</span><span class="item-descricao">Cremosidade do brigadeiro de limão siciliano.</span></div><span class="item-preco">R$ 8,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Origem</span><span class="item-descricao">Formato original, sem recheios.</span></div><span class="item-preco">R$ 7,50</span></div>
+        </div>
+
+        <!-- Sabores Especiais -->
+        <div class="categoria">
+            <h2>Sabores Especiais</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Ninho C/ Nutella</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Pistache</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Ovomaltine</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Caramelo Salgado</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Chocolate Com Laranja</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Creme De Avelã Branco</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Sonho de Valsa</span></div><span class="item-preco">R$ 9,50</span></div>
+        </div>
+
+        <!-- Gela Gourmet -->
+        <div class="categoria">
+            <h2>Gela Gourmet</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Ninho com Nutella</span></div><span class="item-preco">R$ 9,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Doce de Leite</span></div><span class="item-preco">R$ 9,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Chocolate</span></div><span class="item-preco">R$ 9,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Pudim</span></div><span class="item-preco">R$ 11,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Maracujá com Nutella</span></div><span class="item-preco">R$ 11,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Morango com Nutella</span></div><span class="item-preco">R$ 11,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Prestígio</span></div><span class="item-preco">R$ 11,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Paçoca</span></div><span class="item-preco">R$ 11,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Pistache</span></div><span class="item-preco">R$ 11,50</span></div>
+        </div>
+
+        <!-- Salgados -->
+        <div class="categoria">
+            <h2>Salgados</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Cigarrete / Tortinha / Pastel de Guaraná / Quibe</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Biscoito de Provolone</span></div><span class="item-preco">R$ 5,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Pão de Queijo</span></div><span class="item-preco">R$ 5,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Biscoito Ferradura</span></div><span class="item-preco">R$ 3,50</span></div>
+        </div>
+
+        <!-- Cafeteria -->
+        <div class="categoria">
+            <h2>Cafeteria</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Chocolate Quente</span></div><span class="item-preco">R$ 18,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Cappuccino / Café Machiatto</span></div><span class="item-preco">R$ 15,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Espresso com Chantilly / Café Coado</span></div><span class="item-preco">R$ 12,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Café Espresso</span></div><span class="item-preco">R$ 8,00</span></div>
+        </div>
+
+        <!-- Bebidas e Sucos -->
+        <div class="categoria">
+            <h2>Bebidas & Sucos</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Sucos Naturais (Morango, Maracujá, Goiaba, Abacaxi c/ Hortelã)</span></div><span class="item-preco">R$ 14,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Suco Prats</span></div><span class="item-preco">R$ 9,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Coca-Cola</span></div><span class="item-preco">R$ 9,40</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Refri Pon Chic</span><span class="item-descricao">O guaraná de sabor único.</span></div><span class="item-preco">R$ 6,50</span></div>
+        </div>
+
+        <!-- Sobremesas & Açaí -->
+        <div class="categoria">
+            <h2>Sobremesas & Açaí</h2>
+            <div class="item"><div class="item-info"><span class="item-nome">Sobremesa no Pote</span></div><span class="item-preco">R$ 18,50</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Brownie Na Taça</span></div><span class="item-preco">R$ 25,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Suco de Açaí 500ML</span></div><span class="item-preco">R$ 19,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Creme / Vitamina de Açaí</span></div><span class="item-preco">R$ 19,00</span></div>
+            <div class="item"><div class="item-info"><span class="item-nome">Creme de Açaí 450g</span></div><span class="item-preco">R$23,00</span></div>
+        </div>
+
+
+
+</body>
+</html>
