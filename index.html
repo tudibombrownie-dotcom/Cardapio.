@@ -1,223 +1,537 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio - Brownie Tudibom</title>
-    <style>
-        :root {
-            --marrom-escuro: #3d2314;
-            --marrom-claro: #8d5524;
-            --dourado: #c6a664;
-            --creme: #fdf5e6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--creme);
-            color: var(--marrom-escuro);
-            margin: 0;
-            padding: 0;
-        }
+<title>Brownie Tudibom - Cardápio</title>
 
-        header {
-            background-color: var(--marrom-escuro);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            border-bottom: 5px solid var(--dourado);
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            letter-spacing: 2px;
-        }
 
-        header p {
-            font-style: italic;
-            margin-top: 10px;
-            opacity: 0.9;
-        }
+:root {
+  --marrom-escuro: #2b160c;
+  --marrom-medio: #4e2a1e;
+  --marrom-claro: #7a3e1d;
+  --caramelo: #c26a2e;
+  --dourado: #e0c097;
+  --fundo: #f6efe9;
+}
 
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-        }
+/* ANIMAÇÃO DE ABERTURA */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(180deg, #f6efe9, #efe4da);
+  margin: 0;
+  color: #3b1f14;
+  animation: fadePage 0.6s ease forwards;
+}
 
-        .categoria {
-            margin-bottom: 30px;
-            border-bottom: 1px solid var(--marrom-claro);
-            padding-bottom: 10px;
-        }
+@keyframes fadePage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-        .categoria h2 {
-            color: var(--marrom-claro);
-            text-transform: uppercase;
-            font-size: 1.2em;
-            text-align: center;
-            background: white;
-            display: block;
-            margin: 0 auto 20px;
-            padding: 5px 15px;
-            width: fit-content;
-            border-radius: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #2b160c, #4e2a1e);
+  font-family: 'Rubik Wet Paint', cursive;
+  font-size: clamp(36px, 6vw, 48px);
+  color: #fceded;
 
-        .item {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 15px;
-        }
+  /* DETALHES MARROM */
+  text-shadow:
+    2px 2px 0 #3b1f14,
+    4px 4px 0 #5a2e1b,
+    6px 6px 12px rgba(43, 22, 12, 0.6);
 
-        .item-info {
-            flex: 1;
-        }
+  letter-spacing: 1px;
+  color: #fceded;
+  padding: 28px 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
-        .item-nome {
-            font-weight: bold;
-            font-size: 1.1em;
-        }
+/* LOGO */
+.logo {
+  width: 120px;
+  max-width: 70%;
+  margin-bottom: 12px;
+  animation: logoFade 0.15s ease forwards;
+}
 
-        .item-descricao {
-            font-size: 0.9em;
-            color: #666;
-            display: block;
-        }
+@keyframes logoFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
-        .item-preco {
-            font-weight: bold;
-            color: var(--marrom-escuro);
-            margin-left: 15px;
-            white-space: nowrap;
-        }
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
 
-        .footer {
-            text-align: center;
-            padding: 30px;
-            background-color: #eee;
-            margin-top: 40px;
-        }
+header p {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.9;
+}
 
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-            padding: 15px 25px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            transition: transform 0.3s;
-        }
+/* SEÇÕES */
+section {
+  padding: 18px;
+}
 
-        .btn-whatsapp:hover {
-            transform: scale(1.05);
-        }
+.categoria {
+  margin-bottom: 28px;
+}
 
-        .social-link {
-            display: block;
-            margin-top: 15px;
-            color: var(--marrom-claro);
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-    </style>
+.categoria h2 {
+  color: var(--marrom-escuro);
+  font-size: 19px;
+  margin-bottom: 14px;
+  border-left: 5px solid var(--caramelo);
+  padding-left: 10px;
+}
+
+/* CARD DO ITEM */
+.item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.18);
+}
+
+.item img {
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid var(--dourado);
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-nome {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--marrom-escuro);
+}
+
+.item-descricao {
+  font-size: 13px;
+  color: #6a4a3b;
+  margin-top: 2px;
+}
+
+.item-preco {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--caramelo);
+  white-space: nowrap;
+}
+
+/* QR CODE */
+.qr {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.qr img {
+  width: 220px;
+  border-radius: 16px;
+  border: 4px solid var(--dourado);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.qr p {
+  font-size: 14px;
+  color: #5a3a2a;
+  margin-top: 10px;
+}
+.foto-brownie {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(135deg, #4e2a1e, #2b160c);
+  color: #fff;
+  text-align: center;
+  padding: 14px;
+  font-size: 14px;
+}
+/* CONTAINER DOS BOTÕES */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  z-index: 999;
+}
+
+/* BOTÃO IFOOD */
+.ifood-btn {
+  background: linear-gradient(135deg, #ea1d2c, #b3141f);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease;
+}
+
+.ifood-btn:hover {
+  transform: scale(1.05);
+}
+
+/* BOTÃO WHATSAPP */
+.whatsapp-btn {
+  background: linear-gradient(135deg, #25d366, #1da851);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+}
+
+/* BOTÃO INSTAGRAM */
+.instagram-btn {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 40px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease;
+}
+
+.instagram-btn:hover {
+  transform: scale(1.05);
+}
+
+
+.ifood-btn:hover {
+  transform: scale(1.05);
+}
+</style>
+
 </head>
+
 <body>
 
-    <header>
-        <h1>BROWNIE TUDIBOM</h1>
-        <p>O sabor que derrete na boca e aquece o coração em 2026.</p>
-    </header>
+<header>
+  <h1> Brownie Tudibom</h1>
+  <img src="imagens\ChatGPT Image 30 de jan. de 2026, 13_25_30.png" class="foto-brownie">
+</header>
 
-    <div class="container">
-        
-        <!-- Brownies -->
-        <div class="categoria">
-            <h2>Brownies</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Nutella</span><span class="item-descricao">Inconfundível creme de avelã.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Leite Ninho</span><span class="item-descricao">Delicioso creme feito com o original leite ninho.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Oreo</span><span class="item-descricao">Sabor e crocância do nosso brownie de oreo.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Doce de Leite</span><span class="item-descricao">Doce feito do mais puro leite.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Brigadeiro</span><span class="item-descricao">Feito com puro chocolate belga amargo.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Nozes com Damasco</span><span class="item-descricao">Crocância com leve acidez.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Morango</span><span class="item-descricao">A clássica combinação com chocolate.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Maracujá</span><span class="item-descricao">Refrescância natural com chocolate.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Café</span><span class="item-descricao">Sabor puro e nobre de Café.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Amendoim</span><span class="item-descricao">Creme de amendoim torrado na fábrica.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Doce De Leite com Ameixa</span><span class="item-descricao">Doce de leite com ameixa triturada.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Coco</span><span class="item-descricao">Com lascas de coco real.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Limão Siciliano</span><span class="item-descricao">Cremosidade do brigadeiro de limão siciliano.</span></div><span class="item-preco">R$ 8,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Origem</span><span class="item-descricao">Formato original, sem recheios.</span></div><span class="item-preco">R$ 7,50</span></div>
-        </div>
+<section>
 
-        <!-- Sabores Especiais -->
-        <div class="categoria">
-            <h2>Sabores Especiais</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Ninho C/ Nutella</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Pistache</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Ovomaltine</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Caramelo Salgado</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Chocolate Com Laranja</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Creme De Avelã Branco</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie De Sonho de Valsa</span></div><span class="item-preco">R$ 9,50</span></div>
-        </div>
+<div class="categoria">
+<div class="categoria">
+  <h2>Brownies</h2>
 
-        <!-- Gela Gourmet -->
-        <div class="categoria">
-            <h2>Gela Gourmet</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Ninho com Nutella</span></div><span class="item-preco">R$ 9,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Doce de Leite</span></div><span class="item-preco">R$ 9,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Chocolate</span></div><span class="item-preco">R$ 9,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Pudim</span></div><span class="item-preco">R$ 11,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Maracujá com Nutella</span></div><span class="item-preco">R$ 11,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Morango com Nutella</span></div><span class="item-preco">R$ 11,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Prestígio</span></div><span class="item-preco">R$ 11,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Paçoca</span></div><span class="item-preco">R$ 11,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Pistache</span></div><span class="item-preco">R$ 11,50</span></div>
-        </div>
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291219_6MA8_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Nutella</span>
+      <span class="item-descricao">Inconfundível creme de avelã.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
 
-        <!-- Salgados -->
-        <div class="categoria">
-            <h2>Salgados</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Cigarrete / Tortinha / Pastel de Guaraná / Quibe</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Biscoito de Provolone</span></div><span class="item-preco">R$ 5,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Pão de Queijo</span></div><span class="item-preco">R$ 5,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Biscoito Ferradura</span></div><span class="item-preco">R$ 3,50</span></div>
-        </div>
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291221_777D_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Leite Ninho</span>
+      <span class="item-descricao">Delicioso creme feito com o original leite ninho.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
 
-        <!-- Cafeteria -->
-        <div class="categoria">
-            <h2>Cafeteria</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Chocolate Quente</span></div><span class="item-preco">R$ 18,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Cappuccino / Café Machiatto</span></div><span class="item-preco">R$ 15,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Espresso com Chantilly / Café Coado</span></div><span class="item-preco">R$ 12,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Café Espresso</span></div><span class="item-preco">R$ 8,00</span></div>
-        </div>
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291245_8B06_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Oreo</span>
+      <span class="item-descricao">Sabor e crocância do nosso brownie de oreo.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
 
-        <!-- Bebidas e Sucos -->
-        <div class="categoria">
-            <h2>Bebidas & Sucos</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Sucos Naturais (Morango, Maracujá, Goiaba, Abacaxi c/ Hortelã)</span></div><span class="item-preco">R$ 14,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Suco Prats</span></div><span class="item-preco">R$ 9,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Coca-Cola</span></div><span class="item-preco">R$ 9,40</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Refri Pon Chic</span><span class="item-descricao">O guaraná de sabor único.</span></div><span class="item-preco">R$ 6,50</span></div>
-        </div>
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291227_ANS1_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Doce de Leite</span>
+      <span class="item-descricao">Doce feito do mais puro leite.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
 
-        <!-- Sobremesas & Açaí -->
-        <div class="categoria">
-            <h2>Sobremesas & Açaí</h2>
-            <div class="item"><div class="item-info"><span class="item-nome">Sobremesa no Pote</span></div><span class="item-preco">R$ 18,50</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Brownie Na Taça</span></div><span class="item-preco">R$ 25,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Suco de Açaí 500ML</span></div><span class="item-preco">R$ 19,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Creme / Vitamina de Açaí</span></div><span class="item-preco">R$ 19,00</span></div>
-            <div class="item"><div class="item-info"><span class="item-nome">Creme de Açaí 450g</span></div><span class="item-preco">R$23,00</span></div>
-        </div>
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291226_I68G_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Brigadeiro</span>
+      <span class="item-descricao">Feito com puro chocolate belga amargo.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291229_75N7_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Nozes com Damasco</span>
+      <span class="item-descricao">Crocância com leve acidez.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291237_5B4O_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Morango</span>
+      <span class="item-descricao">A clássica combinação com chocolate.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291235_Y4IE_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Maracujá</span>
+      <span class="item-descricao">Refrescância natural com chocolate.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291232_6A6R_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Café</span>
+      <span class="item-descricao">Sabor puro e nobre de Café.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291253_FL6O_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Amendoim</span>
+      <span class="item-descricao">Creme de amendoim torrado na fábrica.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291246_RFLR_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Coco</span>
+      <span class="item-descricao">Com lascas de coco natural.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291251_8IN1_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Limão Siciliano</span>
+      <span class="item-descricao">Cremosidade do brigadeiro de limão siciliano.</span>
+    </div>
+    <span class="item-preco">R$ 8,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291325_TM84_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Origem</span>
+      <span class="item-descricao">Formato original, sem recheios.</span>
+    </div>
+    <span class="item-preco">R$ 7,50</span>
+  </div>
+</div>
+<div class="categoria">
+  <h2>Sabores Especiais</h2>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291301_0HWC_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Ninho C/ Nutella</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291258_WUO0_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Pistache</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291731_3367_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Ovomaltine</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
+
+  <div class="item">
+    <img src="imagens\WhatsApp Image 2026-01-30 at 17.10.34.jpeg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Alpino</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291256_N0NT_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Caramelo Salgado</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
 
 
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291304_J28I_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Creme De Avelã Branco</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
+
+  <div class="item">
+    <img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291800_38WH_i.jpg">
+    <div class="item-info">
+      <span class="item-nome">Brownie De Sonho de Valsa</span>
+    </div>
+    <span class="item-preco">R$ 9,50</span>
+  </div>
+</div>
+<div class="categoria">
+  <h2>Pra Toda Hora!</h2>
+
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291329_L7B2_i.jpg"><div class="item-info"><span class="item-nome">Casquinha No Saquinho 120g</span></div><span class="item-preco">R$ 6,50</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291329_L7B2_i.jpg"><div class="item-info"><span class="item-nome">Casquinha No Pote 210g</span></div><span class="item-preco">R$ 10,00</span></div>
+</div>
+  <h2>Gela Gourmet</h2>
+
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511191742_WFSV_i.jpg"><div class="item-info"><span class="item-nome">Ninho com Nutella</span></div><span class="item-preco">R$ 11,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-30 at 17.21.39.jpeg"><div class="item-info"><span class="item-nome">Doce de Leite</span></div><span class="item-preco">R$ 11,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511191739_B81W_i.jpg"><div class="item-info"><span class="item-nome">Pudim</span></div><span class="item-preco">R$ 13,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511191725_A8HE_i.jpg"><div class="item-info"><span class="item-nome">Maracujá com Nutella</span></div><span class="item-preco">R$ 11,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511191725_5256_i.jpg"><div class="item-info"><span class="item-nome">Morango com Nutella</span></div><span class="item-preco">R$ 11,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511191727_P226_i.jpg"><div class="item-info"><span class="item-nome">Prestígio</span></div><span class="item-preco">R$ 11,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511241835_72ED_i.jpg"><div class="item-info"><span class="item-nome">Paçoca</span></div><span class="item-preco">R$ 11,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/3f27a774-983b-4022-81a6-054d6d29d89b/202511191739_Q7W6_i.jpg"><div class="item-info"><span class="item-nome">Pistache</span></div><span class="item-preco">R$ 11,00</span></div>
+</div>
+<div class="categoria">
+  <h2>Salgados</h2>
+
+  <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBw5K6UeilmG7ermNZ-OGVAVDZGhjm_bRf6Q&s"><div class="item-info"><span class="item-nome">Salgados </span><span class="item-descricao">  Cigarrete / Tortinha / Pastel de Guaraná / Quibe</span></div><span class="item-preco">R$ 10,00</span></div>
+  <div class="item"><img src="https://cdnv2.moovin.com.br/bancadoholandes/imagens/produtos/det/70e052abfd8a16c604fb5e77f26eae5687bf1cc8_0905251713131733.png"><div class="item-info"><span class="item-nome">Quiche</span><span class="item-descricao">  Damasco com queijo brie / Alho Poró com Ricota / Lombo com abacaxi</span></div><span class="item-preco">R$ 20,00</span></div>
+  <div class="item"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiQZHaXrHMI90AzVm4VW-XlNbJRUXdISBjHQ&s"><div class="item-info"><span class="item-nome">Biscoito de Provolone</span></div><span class="item-preco">R$ 6,00</span></div>
+  <div class="item"><img src="https://www.guiadasemana.com.br/contentFiles/system/pictures/2016/2/153005/original/pao-de-queijo.jpg"><div class="item-info"><span class="item-nome">Pão de Queijo Super Lanche</span></div><span class="item-preco">R$ 5,50</span></div>
+  <div class="item"><img src="https://panutti.com.br/resize/imagecache//e7d7c8c42ff54e556b7fc9154f35bab3.jpg"><div class="item-info"><span class="item-nome">Biscoito Ferradura</span></div><span class="item-preco">R$ 3,50</span></div>
+</div>
+<div class="categoria">
+  <h2>Cafeteria</h2>
+
+  <div class="item"><img src="imagens\Chocolate.jpeg"><div class="item-info"><span class="item-nome">Chocolate Quente</span></div><span class="item-preco">R$ 20,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-29 at 17.40.31.jpeg"><div class="item-info"><span class="item-nome">Cappuccino / Café Machiatto</span></div><span class="item-preco">R$ 15,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-30 at 12.43.02 (2).jpeg"><div class="item-info"><span class="item-nome">Café Espresso Curto com Chantilly / Café Coado</span></div><span class="item-preco">R$ 12,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-29 at 11.27.10 (6).jpeg"><div class="item-info"><span class="item-nome">Café Espresso Curto</span></div><span class="item-preco">R$ 8,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-29 at 11.27.10 (6).jpeg"><div class="item-info"><span class="item-nome">Café Espresso Longo</span></div><span class="item-preco">R$ 12,00</span></div>
+</div>
+<div class="categoria">
+  <h2>Sobremesas no Pote </h2>
+
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601231349_lw6y8nki48q.png"><div class="item-info"><span class="item-nome">Sobremesa de Frutas Vermelhas 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601231313_UDH0_i.jpg"><div class="item-info"><span class="item-nome">Sobremesa de Caramelo Salgado 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601231318_n4dhuxfrbl.png"><div class="item-info"><span class="item-nome">Sobremesa de Mousse de Maracujá 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601231345_L627_i.jpg"><div class="item-info"><span class="item-nome">Sobremesa de Ninho C/ Nutella 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601231347_Q568_i.jpg"><div class="item-info"><span class="item-nome">Sobremesa de Morango 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601301614_GLW7_i.jpg"><div class="item-info"><span class="item-nome">Sobremesa de Oreo 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601301619_61Q7_i.jpg"><div class="item-info"><span class="item-nome">Sobremesa de Pistache 150g</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-30 at 12.43.03 (5).jpeg"><div class="item-info"><span class="item-nome">Brownie Na Taça 230g</span></div><span class="item-preco">R$ 25,00</span></div>
+</div>
+<div class="categoria">
+  <h2> Açaí & Gelatos</h2>
+
+  <div class="item"><img src="https://static.itdg.com.br/images/1200-630/54513fb7b37b7a64bcb7eb86ce6e9a2e/337810-original.jpg"><div class="item-info"><span class="item-nome">Vitamina de Açaí 500ML</span></div><span class="item-preco">R$ 19,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291751_114V_i.jpg"><div class="item-info"><span class="item-nome">Creme de Açaí 360ml</span></div><span class="item-preco">R$ 19,90</span></div>
+   <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/89eb6206-f6ad-43de-a50f-30f5f51adf05/202601291804_DVH0_i.jpg"><div class="item-info"><span class="item-nome">Gelatos </span><span class="item-descricao"> Baunilha / Ninho Trufado / Doce de Leite / Chocolate / Pistache / Morango.</span></div><span class="item-preco">R$ 19,50</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-30 at 12.43.03 (3).jpeg"><div class="item-info"><span class="item-nome">MilkShakes </span><span class="item-descricao">  Doce de Leite / Cappuccino / Ovomaltine / Chocolate / Morango / Nutella / Oreo </span></div><span class="item-preco">R$ 25,00</span></div>
+  <div class="item"><img src="https://redeapp.com.br/wp-content/uploads/2025/02/WwwhatsApp-Image-2025-02-23-at-19.06.41-1.jpeg"><div class="item-info"><span class="item-nome">Brownielato</span></div><span class="item-preco">R$ 25,00</span></div>
+</div>
+
+<div class="categoria">
+  <h2>Bebidas & Sucos</h2>
+
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-30 at 13.04.40.jpeg"><div class="item-info"><span class="item-nome">Sucos Naturais</span><span class="item-descricao">  Morango, Maracujá, Goiaba, Abacaxi c/ Hortelã</span></div><span class="item-preco">R$ 14,00</span></div>
+  <div class="item"><img src="https://static.ifood-static.com.br/image/upload/t_medium/pratos/a36cfaa3-51f8-4e16-b286-2f593396f043/202601231531_O7RL_i.jpg"><div class="item-info"><span class="item-nome">Sucos Le Verger 290ml</span></div><span class="item-preco">R$ 11,90</span></div>
+  <div class="item"><img src="https://images.tcdn.com.br/img/img_prod/1082210/refrigerante_coca_cola_600_ml_cx_237_1_a6460d428f2f32c9e828220a8f4c3c83.png"><div class="item-info"><span class="item-nome">Coca-Cola PET 600ml</span></div><span class="item-preco">R$ 9,40</span></div>
+  <div class="item"><img src="https://andinacocacola.vtexassets.com/arquivos/ids/158146-800-450?v=638575081418230000&width=800&height=450&aspect=true"><div class="item-info"><span class="item-nome">Coca-Cola PET 200ml</span></div><span class="item-preco">R$ 3,50</span></div>
+  <div class="item"><img src="https://assets.jokrtech.com/small_PROD_150304008_P1_57d47e0c1c.png"><div class="item-info"><span class="item-nome">Coca-Cola Lata 350ml</span></div><span class="item-preco">R$ 6,00</span></div>
+  <div class="item"><img src="https://www.bernardaoemcasa.com.br/media/catalog/product/cache/1/image/300x300/9df78eab33525d08d6e5fb8d27136e95/r/e/refrigerante_coca-cola_sem_accar_pet_200ml.jpg"><div class="item-info"><span class="item-nome">Coca-Cola PET 200ml Zero</span></div><span class="item-preco">R$ 3,50</span></div>
+  <div class="item"><img src="https://assets.jokrtech.com/small_PROD_15000003300_P1_a59a099a9a.png"><div class="item-info"><span class="item-nome">Coca-Cola PET 600ml Zero</span></div><span class="item-preco">R$ 9,40</span></div>
+  <div class="item"><img src="https://res.cloudinary.com/piramides/image/upload/c_fill,h_564,w_395/v1/products/3709-coca-cola-lata-350ml-zero-12un.20251024104230.png?_a=BAAAV6GX"><div class="item-info"><span class="item-nome">Coca-Cola Lata 350ml Zero</span></div><span class="item-preco">R$ 6,00</span></div>
+  <div class="item"><img src="imagens\WhatsApp Image 2026-01-30 at 12.43.02.jpeg"><div class="item-info"><span class="item-nome">Refri Pon Chic</span><span class="item-descricao"> O guaraná de sabor único.</span></div><span class="item-preco">R$ 6,50</span></div>
+</div>
+
+</div>
+
+
+</section>
+
+<footer>
+  <p>📍 Brownie Tudibom • Rua Sena Madureira, 520 - Ouro Preto, Belo Horizonte - MG, 31340-000</p>
+  <p>Peça pelo iFood 💛</p>
+</footer>
+
+<div class="floating-buttons">
+  <a href="https://www.ifood.com.br/delivery/belo-horizonte-mg/brownie-tudibom-ouro-preto/89eb6206-f6ad-43de-a50f-30f5f51adf05" class="ifood-btn">iFood</a>
+<a href="https://wa.me/5531975104645?text=Olá!%20Gostaria%20de%20fazer%20um%20pedido." class="whatsapp-btn">
+  WhatsApp
+</a>
+  <a href="https://www.instagram.com/brownietudibom/" class="instagram-btn">Instagram</a>
+</div>
 
 </body>
 </html>
